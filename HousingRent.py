@@ -1,15 +1,23 @@
+# It is a simple linear Regress algorithm in machine learning.
+
+# Import python packages
 import csv
 import random
 import math
 
+# Import DataSet
 HousingData = open('Melbourne_housing_Updated.csv','r')
+# Convert Dataset into List
 StructuredHousingData = list(csv.reader(HousingData))
 
+# Take first parameter manual
 thetas = [1, 2, 3, 4, 5, 6, 7]
+# take learning_rate
 alpha = 0.00000000000000001
 
+# Create empty list
 DataNeeded = []
-
+# take data need dataset featur in DataNeeded list
 for i in range(1,len(StructuredHousingData)):
     BlankList = []
     BlankList.append(1)
@@ -22,8 +30,9 @@ for i in range(1,len(StructuredHousingData)):
     BlankList.append(float(StructuredHousingData[i][4]))
     DataNeeded.append(BlankList)
 
+# than train the model    
 for iternumber in range(0,1000):
-
+    # take dels 
     Dels = [0, 0, 0, 0, 0, 0, 0]
     CostFun = 0
 
